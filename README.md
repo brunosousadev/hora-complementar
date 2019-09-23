@@ -65,7 +65,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 | valor     | INT        | NO   |                  |                              |
 | id_categoria   | INT         | NO   |            | CHAVE EXTRAGEIRA             |
 
-## Atividade ##
+## Comprovante ##
 |    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
 |------------|-------------|------|----------------|------------------------------|
 | id         | INT         | NO   | AUTO_INCREMENT |                              | 
@@ -87,11 +87,11 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 
 # Instalando dependências
 # Como contribuir
-1. Fork it!
-2. Create your feature branch: git checkout -b my-new-feature
-3. Commit your changes: git commit -am 'Add some feature'
-4. Push to the branch: git push origin my-new-feature
-5. Submit a pull request.
+1. faça seu ramo !
+2. Crie sua ramificação de recursos: git checkout -b my-new-feature
+3. Confirme suas alterações: git commit -am 'Add some feature'
+4. Pressione para a ramificação: git push origin my-new-feature
+5. Envie uma solicitação de recebimento.
 
 
 # Licença
