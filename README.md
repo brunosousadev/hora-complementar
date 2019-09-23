@@ -20,16 +20,64 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 # Banco de Dados
 ## Tabelas 
 - **Curso**: 
-`{ int: id, string: nome, int: quantidade} `
 - **Pessoa** 
-`{ int: id, string: nome, string: matricula, string: senha, string: email, int horas_computadas, int id_curso}`
 - **Categoria** 
-`{int: id, string: nome, string: descrição, string: observação, int: limite, int: id_curso}`
 - **Atividade**
-`{int: id, string: nome , string: descrição, string: tipo_comprovante, int: valor, string: observação, int: id_categoria}`
 - **Comprovante** 
-`{int: id, string: nome, srting: descrição, int: valor, int: id_pessoa, int: id_atividade}`
+
   
+  
+  ## Dicionário de Dados ##
+### Curso ###
+|    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
+|------------|-------------|------|----------------|------------------------------|
+| id         | INT         | NO   | AUTO_INCREMENT |                              |
+| nome       | VARCHAR(45) | NO   |	               |                              |
+| quantidade | INT         | NO   |                |                              |
+
+
+### aluno ###
+|    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
+|------------|-------------|------|----------------|------------------------------|
+| id         | INT         | NO   | AUTO_INCREMENT |                              | 
+| nome       | VARCHAR(45) | NO   |	               |                              |
+| matricula  | VARCHAR(30) | SI   |	               |                              |
+| email      | VARCHAR(30) | SI   |	               |                              |
+| senha      | VARCHAR(100)| SI   |	               |                              |
+| horas_computadas | VARCHAR(50) | SI   |	         |                              |
+| id_curso   | INT         | NO   |                | CHAVE EXTRAGEIRA             |
+
+## Categoria ##
+|    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
+|------------|-------------|------|----------------|------------------------------|
+| id         | INT         | NO   | AUTO_INCREMENT |                              | 
+| nome       | VARCHAR(45) | NO   |	               |                              |
+| descricao  | VARCHAR(250) | NO   |	             |                              |
+| observacao       | VARCHAR(45) | NO   |	         |                              |
+| limite     | INT        | NO   |                 |                              |
+| id_curso   | INT         | NO   |                | CHAVE EXTRAGEIRA             |
+
+## Atividade ##
+|    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
+|------------|-------------|------|----------------|------------------------------|
+| id         | INT         | NO   | AUTO_INCREMENT |                              | 
+| nome       | VARCHAR(45) | NO   |	               |                              |
+| descricao  | VARCHAR(250) | NO   |	             |                              |
+| tipo_comprovante       | VARCHAR(45) | NO   |	   |                              |
+| valor     | INT        | NO   |                  |                              |
+| id_categoria   | INT         | NO   |            | CHAVE EXTRAGEIRA             |
+
+## Atividade ##
+|    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
+|------------|-------------|------|----------------|------------------------------|
+| id         | INT         | NO   | AUTO_INCREMENT |                              | 
+| nome       | VARCHAR(45) | NO   |	               |                              |
+| descricao  | VARCHAR(250) | NO  | 	             |                              |
+| valor      | INT        | NO    |                |                              |
+| id_pessoa  | INT        | NO    |                | CHAVE EXTRAGEIRA             |
+| id_atividade| INT       | NO    |                | CHAVE EXTRAGEIRA             |
+
+
 # Funcionalidades
 
 
@@ -42,8 +90,6 @@ Além disso, você precisará do servidor em execução localmente em sua máqui
 # Instalando
 
 # Instalando dependências
-
-# Conectando o aplicativo ao servidor
 
 # Licença
 Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](https://github.com/brunosousadev/hora-complementar-api/blob/master/LICENSE) para obter detalhes
