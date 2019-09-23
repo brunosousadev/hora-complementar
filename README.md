@@ -19,11 +19,11 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 
 # Banco de Dados
 ## Tabelas 
-1. Curso
-2. Pessoa
-3. Categoria
-4. Atividade
-5. Comprovante
+- **Curso**
+- **Pessoa**
+- **Categoria**
+- **Atividade**
+- **Comprovante**
 
 ## Estrutura das Tabelas
   
