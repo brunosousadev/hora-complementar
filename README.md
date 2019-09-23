@@ -19,13 +19,16 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 
 # Banco de Dados
 ## Tabelas 
-- **Curso**
-- **Pessoa**
-- **Categoria**
+- **Curso**: 
+`{ int: id, string: nome, int: quantidade} `
+- **Pessoa** 
+`{ int: id, string: nome, string: matricula, string: senha, string: email, int horas_computadas, int id_curso}`
+- **Categoria** 
+`{int: id, string: nome, string: descrição, string: observação, int: limite, int: id_curso}`
 - **Atividade**
-- **Comprovante**
-
-## Estrutura das Tabelas
+`{int: id, string: nome , string: descrição, string: tipo_comprovante, int: valor, string: observação, int: id_categoria}`
+- **Comprovante** 
+`{int: id, string: nome, srting: descrição, int: valor, int: id_pessoa, int: id_atividade}`
   
 # Funcionalidades
 
