@@ -25,9 +25,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 - **Atividade**
 - **Comprovante** 
 
-  
-  
-  ## Dicionário de Dados ##
+  ## Campos das Tabelas ##
 ### Curso ###
 |    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
 |------------|-------------|------|----------------|------------------------------|
