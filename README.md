@@ -80,10 +80,8 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 
 
 # Pré-requisitos
-
-Para executar este projeto no modo de desenvolvimento, você precisará de um ambiente básico para executar um aplicativo React-Native, que pode ser encontrado aqui.
-
-Além disso, você precisará do servidor em execução localmente em sua máquina com os dados simulados. Você pode encontrar o servidor e todas as instruções para iniciar o servidor aqui.
+  ## backend
+  ## frontend
 
 # Instalando
 
