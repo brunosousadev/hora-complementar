@@ -86,6 +86,13 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 # Instalando
 
 # Instalando dependências
+# Como contribuir
+1. Fork it!
+2. Create your feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Submit a pull request.
+
 
 # Licença
 Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](https://github.com/brunosousadev/hora-complementar-api/blob/master/LICENSE) para obter detalhes
