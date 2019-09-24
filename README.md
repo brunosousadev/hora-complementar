@@ -1,8 +1,11 @@
 
 # hora-complementar
 
+![nodejs](https://img.shields.io/badge/NODE-v8.10.0-green)
+![npm version](https://img.shields.io/badge/NPM-v3.5.2-blue)
+![adonisjs](https://img.shields.io/badge/ADONISJS-v4.0.12-red)
 ![license](https://img.shields.io/github/license/nhn/tui.image-editor.svg)
-![npm version](https://img.shields.io/badge/NPM-9-blue)
+
 
 # A ideia do projeto é
 
@@ -75,7 +78,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 | nome       | VARCHAR(45) | NO   |	               |                              |
 | descricao  | VARCHAR(250) | NO  | 	             |                              |
 | valor      | INT        | NO    |                |                              |
-| id_pessoa  | INT        | NO    |                | CHAVE EXTRAGEIRA             |
+| id_usuario | INT        | NO    |                | CHAVE EXTRAGEIRA             |
 | id_atividade| INT       | NO    |                | CHAVE EXTRAGEIRA             |
 
 
