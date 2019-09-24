@@ -12,6 +12,7 @@ class CategorySchema extends Schema {
       table.string('note').notNullable()
       table.integer('limit').notNullable()
       table.integer('id_course').unsigned().notNullable();
+      table.foreign('id_course').references('id').inTable('courses');
       table.timestamps()
     })
   }
