@@ -20,7 +20,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 # Banco de Dados
 ## Tabelas 
 - **Curso**: 
-- **Pessoa** 
+- **Usuário** 
 - **Categoria** 
 - **Atividade**
 - **Comprovante** 
@@ -34,7 +34,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 | quantidade | INT         | NO   |                |                              |
 
 
-### aluno ###
+### Usuário ###
 |    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
 |------------|-------------|------|----------------|------------------------------|
 | id         | INT         | NO   | AUTO_INCREMENT |                              | 
