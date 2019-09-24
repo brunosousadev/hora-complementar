@@ -1,5 +1,8 @@
-# hora-complementar-api
 
+# hora-complementar
+
+![license](https://img.shields.io/github/license/nhn/tui.image-editor.svg)
+![npm version](https://img.shields.io/badge/NPM-9-blue)
 
 # A ideia do projeto é
 
