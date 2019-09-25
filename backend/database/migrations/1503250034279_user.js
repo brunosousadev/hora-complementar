@@ -14,6 +14,7 @@ class UserSchema extends Schema {
       table.string('password', 60).notNullable()
       table.integer('computed_hours').notNullable()
       table.integer('id_course').unsigned().notNullable();
+      table.foreign('id_course').references('id').inTable('courses');
       table.timestamps()
     })
   }

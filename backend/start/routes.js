@@ -17,5 +17,7 @@
 const Route = use('Route')
 
 
-Route.get('/', 'UserController.index');
+Route.post('/course', 'CourseController.store');
+Route.get('/course', 'CourseController.index');
 
+Route.post('/user', 'UserController.store');

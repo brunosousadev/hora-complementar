@@ -6,7 +6,7 @@ const Model = use('Model')
 class Category extends Model {
 
     activities(){
-        return this.hasMany('App/Models/Activity')
+        return this.belongsTo('App/Models/Activity')
     }
 }
 

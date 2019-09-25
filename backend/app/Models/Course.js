@@ -7,11 +7,11 @@ class Course extends Model {
 
     
     users(){
-        return this.hasMany('App/Models/User')
+        return this.belongsTo('App/Models/User')
     }
 
     categories(){
-        return this.hasMany('App/Models/Category')
+        return this.belongsTo('App/Models/Category')
     }
 }
 
