@@ -16,6 +16,5 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-
-Route.get('/', 'UserController.index');
-
+Route.resource('course', 'CourseController').apiOnly()
+Route.resource('user', 'UserController').apiOnly()

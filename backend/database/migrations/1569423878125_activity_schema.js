@@ -10,8 +10,7 @@ class ActivitySchema extends Schema {
       table.string('name').notNullable()
       table.string('description').notNullable()
       table.string('voucher_type').notNullable()
-      table.integer('value').notNullable()
-      table.integer('id_category').unsigned().notNullable();
+      table.integer('value').notNullable()  
       table.timestamps()
     })
   }

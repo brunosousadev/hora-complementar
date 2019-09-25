@@ -4,6 +4,7 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Category = use('App/Modls/Category');
 /**
  * Resourceful controller for interacting with categories
  */
@@ -17,7 +18,10 @@ class CategoryController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
+  async index () {   
+    const categories = await Category.query().with('activities').fetch();
+
+    return categories;
   }
 
   /**

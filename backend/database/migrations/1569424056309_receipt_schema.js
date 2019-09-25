@@ -9,9 +9,7 @@ class ReceiptSchema extends Schema {
       table.increments()
       table.string('name').notNullable()
       table.string('description').notNullable()
-      table.integer('value').notNullable()
-      table.integer('id_user').unsigned().notNullable();
-      table.integer('id_activity').unsigned().notNullable();
+      table.integer('value').notNullable()  
       table.timestamps()
     })
   }

@@ -7,7 +7,7 @@ class Category extends Model {
 
     activities(){
         return this.hasMany('App/Models/Activity')
-    }
+      }
 }
 
 module.exports = Category

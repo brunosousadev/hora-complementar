@@ -4,8 +4,6 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-
-
 /**
  * Resourceful controller for interacting with receipts
  */
@@ -19,9 +17,8 @@ class ReceiptController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index () {
-
-}
+  async index ({ request, response, view }) {
+  }
 
   /**
    * Render a form to be used for creating a new receipt.
