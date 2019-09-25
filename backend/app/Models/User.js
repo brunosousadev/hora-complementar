@@ -35,10 +35,10 @@ class User extends Model {
     return this.hasMany('App/Models/Token')
   }
 
-  receipts(){
+  vouchers(){
     return this.hasMany('App/Models/Receipt')
   }
-
+  
 }
 
 module.exports = User

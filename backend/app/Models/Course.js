@@ -5,14 +5,13 @@ const Model = use('Model')
 
 class Course extends Model {
 
-    
-    users(){
-        return this.belongsTo('App/Models/User')
-    }
+    users () {
+        return this.hasMany('App/Models/User')
+      }
 
     categories(){
-        return this.belongsTo('App/Models/Category')
-    }
+        return this.hasMany('App/Models/Category')
+      }
 }
 
 module.exports = Course

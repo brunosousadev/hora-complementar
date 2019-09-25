@@ -6,8 +6,8 @@ const Model = use('Model')
 class Category extends Model {
 
     activities(){
-        return this.belongsTo('App/Models/Activity')
-    }
+        return this.hasMany('App/Models/Activity')
+      }
 }
 
 module.exports = Category

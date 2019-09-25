@@ -31,7 +31,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 - **Atividade**
 - **Comprovante** 
 
-  ## Campos das Tabelas ##
+  ## Composição das Tabelas ##
 ### Curso ###
 |    CAMPO   | TIPO        | NULO | EXTRA          | COMENTARIOS                  |
 |------------|-------------|------|----------------|------------------------------|
@@ -48,7 +48,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 | matricula  | VARCHAR(30) | SI   |	               |                              |
 | email      | VARCHAR(30) | SI   |	               |                              |
 | senha      | VARCHAR(100)| SI   |	               |                              |
-| horas_computadas | VARCHAR(50) | SI   |	         |                              |
+| horas_computadas | VARCHAR(50)  | NO   |	       |  TEM VALOR PADRÃO INCIAL. 0  |
 | id_curso   | INT         | NO   |                | CHAVE EXTRAGEIRA             |
 
 ## Categoria ##
@@ -84,6 +84,12 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 
 # Funcionalidades
 
+## API REST
+1. ```index```: **Listar** todos registros;
+2. ```show```: **Exibir** um registro;
+3. ```store```: **Criar** novo registro;
+4. ```update```: **Alterar** um registro;
+5. ```destroy```: **Remover** um registro;
 
 # Pré-requisitos
   ## backend
@@ -93,7 +99,8 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 
 # Instalando dependências
 # Como contribuir
-1. faça seu ramo !
+
+1. faça seu cópia !
 2. Crie sua ramificação de recursos: git checkout -b my-new-feature
 3. Confirme suas alterações: git commit -am 'Add some feature'
 4. Pressione para a ramificação: git push origin my-new-feature

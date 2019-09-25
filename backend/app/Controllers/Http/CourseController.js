@@ -15,16 +15,22 @@ class CourseController {
    * Show a list of all courses.
    * GET courses
    *
+   * @param {object} ctx
+   * @param {Request} ctx.request
+   * @param {Response} ctx.response
+   * @param {View} ctx.view
    */
-  async index () {    
-    
+  async index () {
+                  
+    // Tentar deixar na relação mostrando apenas nome, matricula e e-mail
     const courses =  await Course.query().with('users').with('categories').fetch();
-    return courses;  
+               
+    
+    return courses;
   }
 
 
-
-  /**
+  /**   
    * Create/save a new course.
    * POST courses
    *
@@ -32,14 +38,13 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request}) {
-    const data  = request.only(['name','value']);
-   
+  async store ({ request }) {
+
+    const data = request.only(['name','value']);
 
     const course = await Course.create(data);
-    
-    return course;
 
+    return course;
   }
 
   /**
@@ -51,9 +56,15 @@ class CourseController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
+  async show ({ params}) {
+    const course = await Course.findOrFail(params.id);
+
+    await course.load('users');
+
+    return course;
   }
 
+ 
 
   /**
    * Update course details.
@@ -64,6 +75,8 @@ class CourseController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    // utilizar o course.merge(data)
+    //await course.save()
   }
 
   /**
