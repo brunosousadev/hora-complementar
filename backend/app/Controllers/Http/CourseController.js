@@ -18,7 +18,7 @@ class CourseController {
    * @param {object} ctx
    * @param {Request} ctx.request
    * @param {Response} ctx.response
-   * @param {View} ctx.view
+  course_idcourse_id * @param {View} ctx.view
    */
   async index () {
                   

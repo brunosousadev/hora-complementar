@@ -1,0 +1,40 @@
+'use strict'
+
+
+const {randomBytes} = require('crypto');
+const {promisify} = require('util');
+
+const Mail = use('Mail');
+const Env = use('Env');
+
+const User = use('App/Models/User');
+
+class ForgotPasswordController {
+    async store({request}){        
+        const {email} = request.only(['email']);
+        
+        console.log(email);
+
+        const user = await User.findByOrFail('email',email);
+        
+        console.log(user);
+
+        const random = await promisify(randomBytes)(24);
+        const token = random.toString('hex');
+
+        await user.tokens().create({ token, type:'forgotPassword'});
+
+        const resetPasswordUrl = `${Env.get('FRONT_URL')}/reset?token=${token}`;
+
+        await Mail.send('emails.forgotPassword',         
+        {name: user.name, resetPasswordUrl }, 
+        (message) => {
+            message
+              .to(user.email)
+              .from('brse01@gmail.com')
+              .subject('Recuperação de senha')
+          })
+    }
+}
+
+module.exports = ForgotPasswordController
