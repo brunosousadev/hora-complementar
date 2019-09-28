@@ -25,11 +25,11 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 
 # Banco de Dados
 ## Tabelas 
-- **Curso**: 
-- **Usuário** 
-- **Categoria** 
-- **Atividade**
-- **Comprovante** 
+- **Curso**;
+- **Usuário**;
+- **Categoria**; 
+- **Atividade**;
+- **Comprovante**.
 
   ## Composição das Tabelas ##
 ### Curso ###
@@ -89,7 +89,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 2. ```show```: **Exibir** um registro;
 3. ```store```: **Criar** novo registro;
 4. ```update```: **Alterar** um registro;
-5. ```destroy```: **Remover** um registro;
+5. ```destroy```: **Remover** um registro.
 
 
 # Pré-requisitos
@@ -100,14 +100,39 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
  #### Ciclo de desenvolvimento
  Red,Green, Refactor. Ou seja:
 
-
-1. Escrevemos um Teste que inicialmente não passa (```Red```)
-2. Adicionamos uma nova funcionalidade do sistema
-3. Fazemos o Teste passar (```Green```)
-4. Refatoramos o código da nova funcionalidade (```Refactoring```)
-5. Escrevemos o próximo Teste
+1. Escrevemos um Teste que inicialmente não passa (```Red```);
+2. Adicionamos uma nova funcionalidade do sistema;
+3. Fazemos o Teste passar (```Green```);
+4. Refatoramos o código da nova funcionalidade (```Refactoring```);
+5. Escrevemos o próximo Teste.
 
 ![](https://arquivo.devmedia.com.br/artigos/Fabio_Gomes_Rocha/TDD/TDD_1.jpg)
+
+
+## Validação das requisições
+  Precisa instalar o provedor de validação do adonis
+
+  ```adonis install @adonisjs/validator```
+
+  Adiciona lá no start/app.js
+```
+  const providers = [
+        '@adonisjs/validator/providers/ValidatorProvider'
+    ]
+```
+
+A validação de `AdonisJ` usa o  [Indicative](https://indicative.adonisjs.com/guides/master/introduction) .Para detalhes completos sobre o uso, consulte a documentação indicativa oficial.
+
+Indicativo é uma biblioteca de validação de dados para validar objetos de dados complexos, definindo um esquema legível por humanos. Em poucas palavras, você pode
+
+1.  Valide objetos e matrizes aninhados.;
+2.  Defina mensagens de erro de validação personalizadas;
+3.  Use formatadores de erro para definir o formato das mensagens de erro. Por exemplo: JSON: formatador de API para formatar mensagens de erro de acordo com a especificação JSON: API;
+4.  Opção para remover propriedades não validadas do objeto de dados;
+5.  Suporte para validações assíncronas;
+6.  API extensível para adicionar regras personalizadas;
+7.  Desinfetante de dados.
+
 
   ## frontend
 
