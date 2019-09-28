@@ -9,7 +9,7 @@
 
 # A ideia do projeto é
 
-Uma plataforma para gerenciar as horas complementares dos cursos da Universidade Federal do Ceará - Campus Crateús
+Uma plataforma para gerenciar as horas complementares dos cursos da Universidade Federal do Ceará - Campus Crateús.
 
 # Por quê?
 
@@ -91,8 +91,24 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 4. ```update```: **Alterar** um registro;
 5. ```destroy```: **Remover** um registro;
 
+
 # Pré-requisitos
-  ## backend
+  ## backend  
+  ## Test Driven Development-TDD
+> "O desenvolvimento do backend está sendo feito por desenvolvimento Orientado por Testes (Test Driven Development). Desenvolvimento orientado a TDD baseia-se em pequenos ciclos de repetições, onde onde para cada funcionalidade do sistema um teste é criado antes. Este novo teste criado inicialmente falha, já que ainda não temos a implementação da funcionalidade em questão e, em seguida, implementamos a funcionalidade para fazer o teste passar!" ( [Devmedia](https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533),2018).
+    
+ #### Ciclo de desenvolvimento
+ Red,Green, Refactor. Ou seja:
+
+
+1. Escrevemos um Teste que inicialmente não passa (```Red```)
+2. Adicionamos uma nova funcionalidade do sistema
+3. Fazemos o Teste passar (```Green```)
+4. Refatoramos o código da nova funcionalidade (```Refactoring```)
+5. Escrevemos o próximo Teste
+
+![](https://arquivo.devmedia.com.br/artigos/Fabio_Gomes_Rocha/TDD/TDD_1.jpg)
+
   ## frontend
 
 # Instalando
