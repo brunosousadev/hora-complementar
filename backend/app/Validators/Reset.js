@@ -1,5 +1,8 @@
 'use strict'
 
+const Antl = use('Antl');
+const {rule} = use('Validator');
+
 class Reset {
   get validateAll(){
     return true;
@@ -7,16 +10,13 @@ class Reset {
   
   get rules () {
     return {
-      token: 'required',
-      password: 'required|confirmed',   
+      token: [rule('required')], 
+      password: [rule('required'), rule('confirmed')],   
     }
   }
 
   get messages () {
-    return {
-      'token.required': 'You must provide a token.',     
-      'password.required': 'You must provide a password.'
-    }
+    return Antl.list('validation');
   }
 }
 

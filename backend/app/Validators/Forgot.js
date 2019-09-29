@@ -1,5 +1,8 @@
 'use strict'
 
+const Antl = use('Antl');
+const {rule} = use('Validator');
+
 class Forgot {
 
   get validateAll(){
@@ -8,16 +11,13 @@ class Forgot {
   
   get rules () {
     return {
-      email: 'email | required',
+      email: [rule('email'), rule('required')],
     }
   }
 
+
   get messages () {
-    return {
-      'email.required': 'You must provide a email address.',
-      'email.email': 'You must provide a valid email address.',
-      'email.unique': 'This email is already registered.'     
-    }
+    return Antl.list('validation');    
   }
 }
 

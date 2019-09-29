@@ -1,0 +1,10 @@
+{
+    "unique": "The {{field}} should be unique.",
+    "required": "The {{field}} is required.",
+    "range": "The {{field}} should between {{0}} and {{1}}.",
+    "email": "The {{field}} should be a valida email address.",
+    "to_int": "You must provide a numeric value.",
+    "file" : "The {{field}} should contain a file.",
+    "date":"The {{field}} should be a valid date.",
+    "confirmed":"The {{field}} confirmation does not match."
+}

@@ -5,16 +5,13 @@ const Factory = use('Factory');
 
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
 const User = use('App/Models/User');
-const Course = use('App/Models/Course');
+
 
 trait('Test/ApiClient')
 trait('DatabaseTransactions')
 test('It should return JWT token session created',async ({client, assert})=>{
         
-    const course = await Course.create({
-        name:"Ciência da Computação",
-        value: 192
-    });
+    const course = await Factory.model('App/Models/Course').create();  
     
     const sessionPayload = {
         email:"barbaralady13@gmail.com",
