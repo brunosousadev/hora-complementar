@@ -9,21 +9,24 @@ Route.post('/forgotPassword', 'ForgotPasswordController.store').validator('Forgo
 Route.post('/reset', 'ResetPasswordController.store').validator('Reset');
 
 
-Route.post('courses', 'CourseController.store').validator('Course');
-Route.put('courses/:id', 'CourseController.update').validator('Course');
-Route.get('courses', 'CourseController.index');
-Route.get('courses/:id', 'CourseController.show');
-Route.delete('courses/:id', 'CourseController.destroy');
+Route.get('/courses', 'CourseController.index');
+Route.get('/courses/:id', 'CourseController.show');
+Route.post('/courses', 'CourseController.store').validator('Course');
+Route.put('/courses/:id', 'CourseController.update').validator('Course');
+Route.delete('/courses/:id', 'CourseController.destroy');
 
-
-Route.post('/users', 'UserController.store').validator('User');
 Route.get('/files/:file','FileController.show');
+Route.post('/users', 'UserController.store').validator('User');
 
 Route.group(() => {
-    Route.delete('users/:id', 'UserController.destroy');
-    Route.put('/profile','ProfileController.update').validator('Profile')
     Route.get('/users', 'UserController.index');
-    Route.get('users/:id','UserController.show');
+    Route.get('users/:id','UserController.show');    
+    Route.put('/profile','ProfileController.update').validator('Profile')
+    Route.delete('/users/:id', 'UserController.destroy');
+
+
+    Route.post('/categories', 'CategoryController.store').validator('Category');
+
 }).middleware(['auth']);
 
 

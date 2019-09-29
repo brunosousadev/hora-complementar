@@ -41,3 +41,17 @@
        value: faker.integer({ min: 0, max: 200 })
   }
 })
+
+
+
+Factory.blueprint('App/Models/Category', (faker, i , data={}) => {
+     
+     console.log(data);
+     return {
+          name: faker.name(),
+          description: faker.paragraph({ sentences: 1 }),          
+          note:faker.paragraph({ sentences: 1 }),
+          limit: faker.integer({ min: 0, max: 200 }),
+          ...data
+     }
+   })
