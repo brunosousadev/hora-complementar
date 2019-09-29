@@ -1,17 +1,19 @@
 'use strict'
-
 const Antl = use('Antl');
 const {rule} = use('Validator');
 
-class Session {
+
+
+class Course {
+
   get validateAll(){
     return true;
   }
   
   get rules () {
     return {
-      email: [rule('email'), rule('required')],
-      password: [rule('required')]
+      name: [rule('required')],
+      value: [rule('required'),rule('regex', '^[0-9]')],
     }
   }
 
@@ -20,4 +22,4 @@ class Session {
   }
 }
 
-module.exports = Session
+module.exports = Course

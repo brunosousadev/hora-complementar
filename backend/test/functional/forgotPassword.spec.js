@@ -13,7 +13,6 @@ trait('Test/ApiClient')
 trait('DatabaseTransactions')
 
 
-
 test('It should send an email with reset password instructions',async ({client, assert})=>{  
     Mail.fake();    
 

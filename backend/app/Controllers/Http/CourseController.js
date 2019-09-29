@@ -15,15 +15,14 @@ class CourseController {
    * @param {object} ctx
    * @param {Request} ctx.request
    * @param {Response} ctx.response
-  course_idcourse_id * @param {View} ctx.view
+   *  * @param {View} ctx.view
    */
-  async index() {
-    // Tentar deixar na relação mostrando apenas nome, matricula e e-mail
-    const courses = await Course.query()
-      .with('users')
-      .with('categories')
-      .fetch();
-
+  async index() {    
+    
+    
+    const courses = await Course.query().with('users').with('categories').fetch();
+      
+      
     return courses;
   }
 
@@ -35,12 +34,14 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store({ request }) {
+  async store({ request, response }) {
     const data = request.only(['name', 'value']);
+    
 
     const course = await Course.create(data);
 
-    return course;
+    response.status(201).send(course);
+    return response;
   }
 
   /**
@@ -69,8 +70,14 @@ class CourseController {
    * @param {Response} ctx.response
    */
   async update({ params, request, response }) {
-    // utilizar o course.merge(data)
-    // await course.save()
+
+    const data = request.only(['name', 'value']);
+    const course = await Course.findOrFail(params.id);
+    
+    course.merge(data)
+    await course.save()
+
+    return course;
   }
 
   /**
@@ -81,7 +88,11 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy({ params, request, response }) {}
-}
+  async destroy({ params}) {
+    const course = await Course.findOrFail(params.id);
+    await course.delete();
+  }
+
+  }
 
 module.exports = CourseController;
