@@ -92,7 +92,7 @@ test('It should be able to update a profile', async ( {client, assert})=>{
 
 });
 
-test('It should be able to delete a course', async ({client, assert})=>{
+test('It should be able to delete a user', async ({client, assert})=>{
   const {id} = await Factory.model('App/Models/Course').create();     
   const user = await Factory.model('App/Models/User').create({
     course_id: id 
