@@ -12,7 +12,7 @@ class User {
     return {
       name: [rule('required')],
       username: [rule('required'), rule('unique', ['users','username'])],
-      registration:[rule('required'),  rule('unique', ['users','email'])],
+      registration:[rule('required'),  rule('unique', ['users','registration'])],
       email: [rule('email'), rule('required')],
       password: [rule('required')],	
       course_id:[rule('required'), rule('exists',['courses','id'])],

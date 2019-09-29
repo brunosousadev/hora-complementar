@@ -21,8 +21,7 @@
         registration: faker.natural(),
         email:faker.email(),
         password: faker.string(),     
-        computed_hours:0, 
-        course_id: 1,
+        computed_hours:0,         
         ... data
    }
  })
