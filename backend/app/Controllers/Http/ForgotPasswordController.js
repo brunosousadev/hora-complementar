@@ -4,6 +4,7 @@ const { promisify } = require('util');
 const Mail = use('Mail');
 const Env = use('Env');
 
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
 const User = use('App/Models/User');
 
 class ForgotPasswordController {

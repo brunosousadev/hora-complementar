@@ -1,5 +1,6 @@
 const { isBefore, parseISO, subHours } = require('date-fns');
 
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
 const Token = use('App/Models/Token');
 
 class ResetPasswordController {

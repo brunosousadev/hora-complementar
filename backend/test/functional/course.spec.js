@@ -26,7 +26,6 @@ test('It should be able create course' ,async ({client, assert})=>{
     assert.exists(response.body.id);     
 });
 
-
 test('It should be able to list courses', async ({client, assert})=>{
 
     const course = await Factory.model('App/Models/Course').create();  
@@ -38,8 +37,6 @@ test('It should be able to list courses', async ({client, assert})=>{
     assert.equal(response.body[0].id,course.id);
 
 });
-
-
 
 test('It should be able to show single courses', async ({client, assert})=>{
 
@@ -53,8 +50,6 @@ test('It should be able to show single courses', async ({client, assert})=>{
 
 });
 
-
-
 test('It should be able to update a course', async ( {client, assert})=>{
     const course = await Factory.model('App/Models/Course').create();  
     const name = "Ciência da computação";
@@ -65,7 +60,6 @@ test('It should be able to update a course', async ( {client, assert})=>{
     assert.equal(response.body.name, name);
 
 });
-
 
 test('It should be able to delete a course', async ({client, assert})=>{
     const course = await Factory.model('App/Models/Course').create();  

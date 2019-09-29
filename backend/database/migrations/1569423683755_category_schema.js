@@ -10,8 +10,7 @@ class CategorySchema extends Schema {
       table.string('name').notNullable()
       table.string('description').notNullable()
       table.string('note').notNullable()
-      table.integer('limit').notNullable()      
-      
+      table.integer('limit').notNullable()            
       table.timestamps()
     })
   }

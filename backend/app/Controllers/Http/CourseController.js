@@ -2,6 +2,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
 const Course = use('App/Models/Course');
 
 /**
@@ -74,8 +76,8 @@ class CourseController {
     const data = request.only(['name', 'value']);
     const course = await Course.findOrFail(params.id);
     
-    course.merge(data)
-    await course.save()
+    course.merge(data);
+    await course.save();
 
     return course;
   }
