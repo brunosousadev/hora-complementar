@@ -56,7 +56,11 @@ class CategoryController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show({ params, request, response, view }) {}
+  async show({ params}) {
+      const category = await Category.findOrFail(params.id);
+
+      return category;
+  }
 
 
   /**
@@ -67,7 +71,17 @@ class CategoryController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update({ params, request, response }) {}
+  async update({ params, request, response }) {
+    
+    const category = await  Category.findOrFail(params.id);
+    const data = request.only(['name','description','note','limit','course_id']);
+
+    category.merge(data);
+
+    await category.save();
+
+    return category;
+  }
 
   /**
    * Delete a category with id.
@@ -77,7 +91,12 @@ class CategoryController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy({ params, request, response }) {}
+  async destroy({ params, request, response }) {
+    const category = await  Category.findOrFail(params.id);
+
+    await category.delete();
+
+  }
 }
 
 module.exports = CategoryController;

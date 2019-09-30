@@ -28,10 +28,10 @@ Route.group(() => {
 
     Route.post('categories', 'CategoryController.store').validator('Category');
     Route.get('categories', 'CategoryController.index');
-
     Route.get('categories/:id','CategoryController.show');    
-    Route.put('categories/:id','CategoryController.update');
-
+    Route.put('categories/:id','CategoryController.update').validator('Category');
+    Route.delete('categories/:id', 'CategoryController.destroy');
+    
 }).middleware(['auth']);
 
 

@@ -44,9 +44,7 @@
 
 
 
-Factory.blueprint('App/Models/Category', (faker, i , data={}) => {
-     
-     console.log(data);
+Factory.blueprint('App/Models/Category', (faker, i , data={}) => {          
      return {
           name: faker.name(),
           description: faker.paragraph({ sentences: 1 }),          

@@ -54,7 +54,8 @@ test('It should be able to update a course', async ( {client, assert})=>{
     const course = await Factory.model('App/Models/Course').create();  
     const name = "Ciência da computação";
 
-    const response = await client.put(`/courses/${course.id}`).send({...course.toJSON(), name: name }).end();
+    const response = await client.put(`/courses/${course.id}`)
+    .send({...course.toJSON(), name: name }).end();
 
     response.assertStatus(200);
     assert.equal(response.body.name, name);
