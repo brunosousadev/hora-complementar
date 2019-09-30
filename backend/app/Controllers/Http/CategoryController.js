@@ -2,7 +2,9 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-const Category = use('App/Modls/Category');
+
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
+const Category = use('App/Models/Category');
 /**
  * Resourceful controller for interacting with categories
  */
@@ -24,16 +26,6 @@ class CategoryController {
     return categories;
   }
 
-  /**
-   * Render a form to be used for creating a new category.
-   * GET categories/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create({ request, response, view }) {}
 
   /**
    * Create/save a new category.
@@ -43,7 +35,17 @@ class CategoryController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store({ request, response }) {}
+  async store({ request, response }) {
+    const data = request.only(['name','description','note','limit','course_id']);
+       
+    const category = await Category.create({
+      ...data ,
+      course_id: data.course_id
+    });
+
+    return response.status(201).send(category);
+
+  }
 
   /**
    * Display a single category.
@@ -54,18 +56,12 @@ class CategoryController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show({ params, request, response, view }) {}
+  async show({ params}) {
+      const category = await Category.findOrFail(params.id);
 
-  /**
-   * Render a form to update an existing category.
-   * GET categories/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit({ params, request, response, view }) {}
+      return category;
+  }
+
 
   /**
    * Update category details.
@@ -75,7 +71,17 @@ class CategoryController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update({ params, request, response }) {}
+  async update({ params, request, response }) {
+    
+    const category = await  Category.findOrFail(params.id);
+    const data = request.only(['name','description','note','limit','course_id']);
+
+    category.merge(data);
+
+    await category.save();
+
+    return category;
+  }
 
   /**
    * Delete a category with id.
@@ -85,7 +91,12 @@ class CategoryController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy({ params, request, response }) {}
+  async destroy({ params, request, response }) {
+    const category = await  Category.findOrFail(params.id);
+
+    await category.delete();
+
+  }
 }
 
 module.exports = CategoryController;
