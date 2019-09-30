@@ -19,7 +19,7 @@ test('It should be able create course' ,async ({client, assert})=>{
     
     const response = await client.post('/courses').send({
         name: "Ciência da Computação",
-        value: 180,
+        value: 10,
     }).end();
         
     response.assertStatus(201);   

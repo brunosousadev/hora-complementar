@@ -25,12 +25,19 @@ Route.group(() => {
     Route.put('profile','ProfileController.update').validator('Profile')
     Route.delete('users/:id', 'UserController.destroy');
 
-
-    Route.post('categories', 'CategoryController.store').validator('Category');
+    
     Route.get('categories', 'CategoryController.index');
     Route.get('categories/:id','CategoryController.show');    
+    Route.post('categories', 'CategoryController.store').validator('Category');
     Route.put('categories/:id','CategoryController.update').validator('Category');
     Route.delete('categories/:id', 'CategoryController.destroy');
+
+    
+    Route.get('activities', 'ActivityController.index');
+    Route.get('activities/:id','ActivityController.show');    
+    Route.post('activities', 'ActivityController.store').validator('Activity');   
+    Route.put('activities/:id','ActivityController.update').validator('Activity');   
+    Route.delete('activities/:id', 'ActivityController.destroy');
     
 }).middleware(['auth']);
 

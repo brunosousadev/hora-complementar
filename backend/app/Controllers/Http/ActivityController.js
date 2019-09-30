@@ -1,6 +1,6 @@
-/** @typedef {import('@adonisjs/framework/src/Request')} Request */
-/** @typedef {import('@adonisjs/framework/src/Response')} Response */
-/** @typedef {import('@adonisjs/framework/src/View')} View */
+
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
+const Activity = use('App/Models/Activity');
 
 /**
  * Resourceful controller for interacting with activities
@@ -9,66 +9,45 @@ class ActivityController {
   /**
    * Show a list of all activities.
    * GET activities
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
    */
-  async index({ request, response, view }) {}
+  async index() {
+      const activities = await Activity.all();
+      return activities;
+  }
 
-  /**
-   * Render a form to be used for creating a new activity.
-   * GET activities/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create({ request, response, view }) {}
 
-  /**
-   * Create/save a new activity.
-   * POST activities
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
-  async store({ request, response }) {}
+  async store({ request}) {
+      const data = request.only(['name','description','voucher_type','value','category_id']);    
+      const activity = await Activity.create(data);
+
+      return activity;
+  }
 
   /**
    * Display a single activity.
-   * GET activities/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
+   * GET activities/:id   
    */
-  async show({ params, request, response, view }) {}
+  async show({ params}) {
+    const activity = await Activity.findOrFail(params.id);
 
-  /**
-   * Render a form to update an existing activity.
-   * GET activities/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit({ params, request, response, view }) {}
+    return activity;
+  }
+
 
   /**
    * Update activity details.
    * PUT or PATCH activities/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
    */
-  async update({ params, request, response }) {}
+  async update({ params, request }) {
+    const data = request.only(['name','description','voucher_type','value','category_id']); 
+
+    const activity = await Activity.findOrFail(params.id);
+
+    activity.merge(data);
+    await activity.save();
+
+    return activity;
+  }
 
   /**
    * Delete a activity with id.
@@ -78,7 +57,11 @@ class ActivityController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy({ params, request, response }) {}
+  async destroy({ params}) {
+    const activity = await  Activity.findOrFail(params.id);
+
+    await activity.delete();
+  }
 }
 
 module.exports = ActivityController;

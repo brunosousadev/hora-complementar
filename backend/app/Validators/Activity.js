@@ -13,9 +13,8 @@ class Activity {
        name: [rule('required')],
        description: [rule('string')],
        voucher_type: [rule('string')],
-       value: [rule('required'),rule('to_int')],
+       value: [rule('required'),rule('number')],
        category_id: [rule('required'), rule('exists',['categories','id'])]
-      //
     }
   }
   get messages () {
