@@ -13,7 +13,7 @@ class Category {
       name: [rule('required'), rule('unique', ['categories','name'])],
       description:[rule('required')],
       note:[rule('required')],
-      limit:[rule('required'), rule('regex', '^[0-9]')],
+      limit:[rule('required'), rule('number')],
       course_id: [rule('required'), rule('exists',['courses','id'])]
     }
   }

@@ -23,7 +23,7 @@ test('It should be able create Category',async ({client, assert})=>{
           name: 'Iniciação à Pesquisa e Ensino',
           description:'Experiência ativa em exporconteúdos afins ao curso (ciências exatas ou tecnologia) dentro do contexto universitário',
           note:'Experiência ativa em exporconteúdos afins ao curso (ciências exatas ou tecnologia) dentro do contexto universitário',
-          limit:94,
+          limit: 94 ,
           course_id: id
         })
         .end();

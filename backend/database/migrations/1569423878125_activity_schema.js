@@ -8,8 +8,8 @@ class ActivitySchema extends Schema {
     this.create('activities', (table) => {
       table.increments()
       table.string('name').notNullable()
-      table.string('description').notNullable()
-      table.string('voucher_type').notNullable()
+      table.string('description')
+      table.string('voucher_type')
       table.integer('value').notNullable()  
       table.timestamps()
     })

@@ -45,7 +45,8 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 |------------|-------------|------|----------------|------------------------------|
 | id         | INT         | NO   | AUTO_INCREMENT |                              | 
 | nome       | VARCHAR(45) | NO   |	               |                              |
-| matricula  | VARCHAR(30) | SI   |	               |                              |
+| matricula  | VARCHAR(30) | NO   |	               |                              |
+| avatar     | VARCHAR(30) |      |                |                              |
 | email      | VARCHAR(30) | SI   |	               |                              |
 | senha      | VARCHAR(100)| SI   |	               |                              |
 | horas_computadas | VARCHAR(50)  | NO   |	       |  TEM VALOR PADRÃO INCIAL. 0  |
@@ -121,7 +122,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
     ]
 ```
 
-A validação de `AdonisJ` usa o  [Indicative](https://indicative.adonisjs.com/guides/master/introduction) .Para detalhes completos sobre o uso, consulte a documentação indicativa oficial.
+A validação de `AdonisJ` usa o  [Indicative](https://indicative.adonisjs.com/guides/master/introduction). Para detalhes completos sobre o uso, consulte a documentação indicativa oficial.
 
 Indicativo é uma biblioteca de validação de dados para validar objetos de dados complexos, definindo um esquema legível por humanos. Em poucas palavras, você pode
 
@@ -133,7 +134,24 @@ Indicativo é uma biblioteca de validação de dados para validar objetos de dad
 6.  API extensível para adicionar regras personalizadas;
 7.  Desinfetante de dados.
 
+Obs:  Um erro que estava ocorrendo nas validações era na questão de inteiros e isso se apresentou como bug no repositório do Adonisjs porém, já foi corrigida na versão 4.1 do AdonisJs. Para fazer a atualização basta seguir os paços abaixo:
 
+O primeiro passo é atualizar todas as dependências.
+
+Usamos o `npm-check` para obter as versões mais recentes dos pacotes:
+
+``` 
+npm install -g npm-check
+
+```
+Execute o seguinte comando para atualizar as dependências interativamente:
+
+``` 
+npm-check -u
+
+``` 
+Mais informações em : [Documentação](https://adonisjs.com/docs/4.1/upgrade-guide#_getting_started)
+  
   ## frontend
 
 # Instalando
