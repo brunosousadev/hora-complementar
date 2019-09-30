@@ -12,7 +12,7 @@ class Course {
   get rules () {
     return {
       name: [rule('required')],
-      value: [rule('required'),rule('regex', '^[0-9]')],
+      value: [rule('required'),rule('to_int')],
     }
   }
 

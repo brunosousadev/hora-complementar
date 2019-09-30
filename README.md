@@ -45,7 +45,8 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 |------------|-------------|------|----------------|------------------------------|
 | id         | INT         | NO   | AUTO_INCREMENT |                              | 
 | nome       | VARCHAR(45) | NO   |	               |                              |
-| matricula  | VARCHAR(30) | SI   |	               |                              |
+| matricula  | VARCHAR(30) | NO   |	               |                              |
+| avatar     | VARCHAR(30) |      |                |                              |
 | email      | VARCHAR(30) | SI   |	               |                              |
 | senha      | VARCHAR(100)| SI   |	               |                              |
 | horas_computadas | VARCHAR(50)  | NO   |	       |  TEM VALOR PADRÃO INCIAL. 0  |
