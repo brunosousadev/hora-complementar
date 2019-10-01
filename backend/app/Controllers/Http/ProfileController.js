@@ -19,7 +19,7 @@ class ProfileController {
     const avatar = request.file('avatar');
 
     if (avatar) {    
-      await avatar.move(Helpers.tmpPath('uploads'), {
+        await avatar.move(Helpers.tmpPath('uploads'), {
         name: `${new Date().getTime()}.${avatar.subtype}`
       });
 

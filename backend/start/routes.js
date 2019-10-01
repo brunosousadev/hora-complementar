@@ -39,6 +39,13 @@ Route.group(() => {
     Route.put('activities/:id','ActivityController.update').validator('Activity');   
     Route.delete('activities/:id', 'ActivityController.destroy');
     
+
+    Route.post('receipts', 'ReceiptController.store').validator('Receipt');
+    Route.get('receipts', 'ReceiptController.index');
+    Route.get('receipts/:id','ReceiptController.show');  
+    Route.put('receipts/:id','ReceiptController.update');
+    Route.delete('receipts/:id','ReceiptController.destroy');
+
 }).middleware(['auth']);
 
 

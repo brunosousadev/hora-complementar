@@ -1,7 +1,6 @@
-/** @typedef {import('@adonisjs/framework/src/Request')} Request */
-/** @typedef {import('@adonisjs/framework/src/Response')} Response */
-/** @typedef {import('@adonisjs/framework/src/View')} View */
-
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
+const Receipt = use('App/Models/Receipt');
+const Helpers = use('Helpers');
 /**
  * Resourceful controller for interacting with receipts
  */
@@ -9,76 +8,102 @@ class ReceiptController {
   /**
    * Show a list of all receipts.
    * GET receipts
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
    */
-  async index({ request, response, view }) {}
+  async index({ request, response, view }) {
+    const receipts = await Receipt.all();
 
-  /**
-   * Render a form to be used for creating a new receipt.
-   * GET receipts/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create({ request, response, view }) {}
+    return receipts;
+
+  }
 
   /**
    * Create/save a new receipt.
    * POST receipts
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
    */
-  async store({ request, response }) {}
+  async store({ request, response }) {
+    const data = request.only([
+      'name',
+      'description',
+      'value',
+      'user_id',
+      'activity_id',      
+    ]);
+    
+    const file_receipt = request.file('file_receipt');
+    
+    if(file_receipt){
+      await file_receipt.move(Helpers.tmpPath('receipts'), {
+        name: `${new Date().getTime()}_${data.user_id}_.${file_receipt.subtype}`
+      });
+
+      if (!file_receipt.moved()) {
+        return file_receipt.error()
+      }
+
+      data.file_receipt = file_receipt.fileName;      
+    }
+
+    const receipt = await  Receipt.create({...data});
+
+    return response.status(201).send(receipt);    
+  }
 
   /**
    * Display a single receipt.
    * GET receipts/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
+   *   
    */
-  async show({ params, request, response, view }) {}
+  async show({ params}) {
+    const receipt = await Receipt.findOrFail(params.id);
 
-  /**
-   * Render a form to update an existing receipt.
-   * GET receipts/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit({ params, request, response, view }) {}
+    return receipt;
+
+  }
 
   /**
    * Update receipt details.
    * PUT or PATCH receipts/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
    */
-  async update({ params, request, response }) {}
+  async update({ params, request}) {
+      const receipt = await Receipt.findOrFail(params.id);
+      const data = request.only([
+        'name',
+        'description',
+        'value',
+        'user_id',
+        'activity_id',      
+      ]);
+      
+     const file_receipt = request.file('file_receipt');          
+
+      if(file_receipt){
+        
+        await file_receipt.move(Helpers.tmpPath('receipts'), {
+          name: `${new Date().getTime()}_${data.user_id}_.${file_receipt.subtype}`
+      });
+
+      if (!file_receipt.moved()) {
+        return file_receipt.error()
+      }
+
+      data.file_receipt = file_receipt.fileName;      
+    }
+
+      receipt.merge(data);
+
+      await receipt.save();
+
+      return receipt;
+  }
 
   /**
    * Delete a receipt with id.
    * DELETE receipts/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
    */
-  async destroy({ params, request, response }) {}
+  async destroy({ params}) {
+    const receipt = await Receipt.findOrFail(params.id);
+    await receipt.delete();
+  }
 }
 
 module.exports = ReceiptController;

@@ -65,3 +65,13 @@ Factory.blueprint('App/Models/Activity',(faker, i, data={})=>{
         ...data
      }
 })
+
+
+Factory.blueprint('App/Models/Receipt',(faker, i, data={})=>{
+     return{
+          name: faker.name(),
+          description:faker.paragraph({ sentences: 1 }),         
+          value:faker.integer({ min: 0, max: 10 }),
+        ...data
+     }
+})

@@ -53,9 +53,6 @@ class ActivityController {
    * Delete a activity with id.
    * DELETE activities/:id
    *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
    */
   async destroy({ params}) {
     const activity = await  Activity.findOrFail(params.id);

@@ -8,6 +8,7 @@ class ReceiptSchema extends Schema {
     this.create('receipts', (table) => {
       table.increments()
       table.string('name').notNullable()
+      table.string('file_receipt')
       table.string('description').notNullable()
       table.integer('value').notNullable()  
       table.timestamps()
