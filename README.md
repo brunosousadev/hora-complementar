@@ -159,11 +159,30 @@ Mais informações em : [Documentação](https://adonisjs.com/docs/4.1/upgrade-g
 # Instalando dependências
 # Como contribuir
 
-1. faça seu cópia !
-2. Crie sua ramificação de recursos: git checkout -b my-new-feature
-3. Confirme suas alterações: git commit -am 'Add some feature'
-4. Pressione para a ramificação: git push origin my-new-feature
-5. Envie uma solicitação de recebimento.
+1. Faça um fork do repositório.
+2. Clone este fork. 
+    ```
+    $ git clone URLDOSEUFORK
+    ```
+3. Crie sua branch para realizar as modificações desejadas.
+    ``` 
+    $ git checkout -b minha-modificacao
+    ```
+4. Realize as modificações.
+5. Confirme suas alterações.
+    ```
+    $ git commit -am 'Modifica algo'
+    ```
+    ou 
+    ```
+    $ git add .
+    $ git commit -m 'Modifica Algo'
+    ```
+6. Realize um push para a branch remota do seu fork.
+    ```
+    git push origin minha-modificacao
+    ```
+7. Na interface do github, em seu fork, crie um pull request 
 
 
 # Licença
