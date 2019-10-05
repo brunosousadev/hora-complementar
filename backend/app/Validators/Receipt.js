@@ -12,8 +12,8 @@ class Receipt {
     return {
       name: [rule('required')],
       description: [rule('required')],
-      value: [rule('required'), rule('number')],      
-      //file_receipt:  [rule('file'),rule('file_ext',['png','jpg','jpeg','pdf']),rule('file_size','2mb')],
+      value: [rule('required'), rule('number')],   
+      avatar: 'file|file_ext:png,jpg,jpeg,pdf|file_size:4mb',             
       user_id: [rule('required'), rule('exists',['users','id'])],
       activity_id: [rule('required'), rule('exists',['activities','id'])]           
     }

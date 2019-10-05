@@ -1,7 +1,7 @@
 'use strict'
 
 const Helpers = use('Helpers');
-
+const Drive = use('Drive')
 
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
 const User = use('App/Models/User');
@@ -19,6 +19,13 @@ class ProfileController {
     const avatar = request.file('avatar');
 
     if (avatar) {    
+        const currentAvatar = user.avatar;
+        const oldAvatar  = `${Helpers.tmpPath('uploads')}/${currentAvatar}`;
+        const exists = await Drive.exists(oldAvatar);
+        if(exists){
+          await Drive.delete(oldAvatar);
+        }
+
         await avatar.move(Helpers.tmpPath('uploads'), {
         name: `${new Date().getTime()}.${avatar.subtype}`
       });
