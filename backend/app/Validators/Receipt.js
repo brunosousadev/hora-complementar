@@ -13,7 +13,7 @@ class Receipt {
       name: [rule('required')],
       description: [rule('required')],
       value: [rule('required'), rule('number')],   
-      avatar: 'file|file_ext:png,jpg,jpeg,pdf|file_size:4mb',             
+      file_receipt: 'file|file_ext:png,jpg,jpeg,pdf|file_size:4mb',             
       user_id: [rule('required'), rule('exists',['users','id'])],
       activity_id: [rule('required'), rule('exists',['activities','id'])]           
     }

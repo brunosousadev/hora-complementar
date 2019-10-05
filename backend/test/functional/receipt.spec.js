@@ -22,8 +22,6 @@ test('It should be able create receipt',async ({client, assert})=>{
   const activity = await Factory.model('App/Models/Activity').create({category_id: category.id });
   
 
-  
-
   const response = await client.post('/receipts')
     .loginVia(user,'jwt')
       .field('name','course of Git')
@@ -33,6 +31,7 @@ test('It should be able create receipt',async ({client, assert})=>{
       .field('user_id',user.id)
       .field('activity_id',activity.id)        
   .end();        
+  
   response.assertStatus(201);
   assert.exists(response.body.id);
     
