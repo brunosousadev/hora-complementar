@@ -1,7 +1,6 @@
 'use strict'
 
 const Antl = use('Antl');
-const {rule} = use('Validator');
 
 class Profile {
   get validateAll(){
@@ -10,7 +9,7 @@ class Profile {
   
   get rules () {
     return {     
-      avatar: 'file|file_ext:png,jpg,jpeg|file_size:2mb|file_types:image',               
+      avatar: 'file|file_ext:png,jpg,jpeg|file_size:2mb|file_types:image',                     
     }
   }
 
