@@ -100,8 +100,7 @@ Além disso, você pode usar este projeto como desejar, estudar, fazer melhorias
 5. ```destroy```: **Remover** um registro.
 
 
-# Pré-requisitos
-  ## backend  
+# Backend  
   ## Test Driven Development-TDD
 > "O desenvolvimento do backend está sendo feito por desenvolvimento Orientado por Testes (Test Driven Development). Desenvolvimento orientado a TDD baseia-se em pequenos ciclos de repetições, onde onde para cada funcionalidade do sistema um teste é criado antes. Este novo teste criado inicialmente falha, já que ainda não temos a implementação da funcionalidade em questão e, em seguida, implementamos a funcionalidade para fazer o teste passar!" ( [Devmedia](https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533),2018).
     
@@ -159,7 +158,7 @@ npm-check -u
 ``` 
 Mais informações em : [Documentação](https://adonisjs.com/docs/4.1/upgrade-guide#_getting_started)
   
-  ## frontend
+# Frontend
 
 
 # :information_source: Como usar
