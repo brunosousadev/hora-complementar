@@ -1,15 +1,22 @@
+<h2 align="center">
+    <img alt="GoStack MeetApp" src="https://res.cloudinary.com/doxmygrwc/image/upload/v1570365301/g982_mpoeoz.png" />
+    <br>    
+  Projeto Hora Complementares
+</h2>
+<h4 align="center">
+  Um web site que permite que os usuários gerencie e organizem suas horas complementares.
+</h4>
 
-# hora-complementar
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/badge/NODE-v8.10.0-green.svg">
 
-![nodejs](https://img.shields.io/badge/NODE-v8.10.0-green)
-![npm version](https://img.shields.io/badge/NPM-v3.5.2-blue)
-![adonisjs](https://img.shields.io/badge/ADONISJS-v4.0.12-red)
-![license](https://img.shields.io/github/license/nhn/tui.image-editor.svg)
-
-
-# A ideia do projeto é
-
-Uma plataforma para gerenciar as horas complementares dos cursos da Universidade Federal do Ceará - Campus Crateús.
+  <img alt="GitHub language count" src="https://img.shields.io/badge/NPM-v3.5.2-blue.svg">
+  
+  <img alt="GitHub language count" src="https://img.shields.io/badge/ADONISJS-v4.0.12-red.svg">
+  
+  <img alt="GitHub language count" src="https://img.shields.io/github/license/nhn/tui.image-editor.svg">
+  
+</p>
 
 # Por quê?
 
