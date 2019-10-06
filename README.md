@@ -161,9 +161,25 @@ Mais informações em : [Documentação](https://adonisjs.com/docs/4.1/upgrade-g
   
   ## frontend
 
-# Instalando
 
-# Instalando dependências
+# :information_source: Como usar
+
+Para clonar e executar este aplicativo, você precisará do Git, Node.js v10.16 ou superior + Yarn v1.13 ou superior + AdonisJs 4.0 ou superior instalado no seu computador. Na sua linha de comando:
+
+```bash
+# Clonar este repositório
+$ https://github.com/brunosousadev/hora-complementar.git
+
+# Entre no repositório
+$ cd hora-complementar
+
+# Instalar dependências
+$ yarn install
+
+# Execute o servidor
+$ adonis serve --dev
+```
+
 # Como contribuir
 
 1. Faça um fork do repositório.
@@ -192,6 +208,6 @@ Mais informações em : [Documentação](https://adonisjs.com/docs/4.1/upgrade-g
 7. Na interface do github, em seu fork, crie um pull request 
 
 
-# Licença
+# :memo: Licença
 Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](https://github.com/brunosousadev/hora-complementar-api/blob/master/LICENSE) para obter detalhes
 
