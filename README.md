@@ -18,6 +18,10 @@
   
 </p>
 
+# 👨🏼‍💻 Desenvolvedor 
+
+- [Bruno Sousa](https://www.linkedin.com/in/brunosousa01/)
+
 # Por quê?
 
 Este projeto faz parte do meu portfólio pessoal, portanto, ficarei feliz se você puder me fornecer algum feedback sobre o projeto, código, estrutura ou qualquer coisa que você possa relatar que possa me tornar um desenvolvedor melhor!
