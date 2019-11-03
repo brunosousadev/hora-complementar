@@ -1,11 +1,10 @@
-'use strict'
+// eslint-disable-next-line no-undef
 const Helpers = use('Helpers');
 
 class FileController {
-
-    async show({ params , response}) {
-        return response.download(Helpers.tmpPath(`uploads/${params.file}`));
-    }
+  async show({ params, response }) {
+    return response.download(Helpers.tmpPath(`uploads/${params.file}`));
+  }
 }
 
-module.exports = FileController
+module.exports = FileController;

@@ -1,21 +1,20 @@
-'use strict'
-
+/* eslint-disable no-undef */
 const Antl = use('Antl');
 
 class Profile {
-  get validateAll(){
+  get validateAll() {
     return true;
   }
-  
-  get rules () {
-    return {     
-      avatar: 'file|file_ext:png,jpg,jpeg|file_size:2mb|file_types:image',                     
-    }
+
+  get rules() {
+    return {
+      avatar: 'file|file_ext:png,jpg,jpeg|file_size:2mb|file_types:image',
+    };
   }
 
-  get messages () {
+  get messages() {
     return Antl.list('validation');
   }
 }
 
-module.exports = Profile
+module.exports = Profile;

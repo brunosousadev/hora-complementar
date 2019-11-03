@@ -1,9 +1,9 @@
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
-
-
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
+
+// eslint-disable-next-line no-undef
 const Course = use('App/Models/Course');
 
 /**
@@ -19,12 +19,12 @@ class CourseController {
    * @param {Response} ctx.response
    *  * @param {View} ctx.view
    */
-  async index() {    
-    
-    
-    const courses = await Course.query().with('users').with('categories').fetch();
-      
-      
+  async index() {
+    const courses = await Course.query()
+      .with('users')
+      .with('categories')
+      .fetch();
+
     return courses;
   }
 
@@ -38,7 +38,6 @@ class CourseController {
    */
   async store({ request, response }) {
     const data = request.only(['name', 'value']);
-    
 
     const course = await Course.create(data);
 
@@ -71,11 +70,9 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update({ params, request, response }) {
-
+  async update({ params, request }) {
     const data = request.only(['name', 'value']);
     const course = await Course.findOrFail(params.id);
-    
     course.merge(data);
     await course.save();
 
@@ -90,11 +87,10 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy({ params}) {
+  async destroy({ params }) {
     const course = await Course.findOrFail(params.id);
     await course.delete();
   }
-
-  }
+}
 
 module.exports = CourseController;

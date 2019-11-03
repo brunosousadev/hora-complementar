@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "commonjs": true,
-        "es6": true
+        "es6": true,
+        "jest": true
     },
     "extends": [
         "airbnb-base",
@@ -17,7 +18,8 @@
     "parserOptions": {
         "ecmaVersion": 2018
     },
-    "rules": {
+    "rules": {        
+        "eslint-disable-next-line no-undef": "off",
         "prettier/prettier": "error",
         "class-methods-use-this":"off",
         "consistent-return":"off",

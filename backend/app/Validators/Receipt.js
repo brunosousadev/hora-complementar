@@ -1,27 +1,26 @@
-'use strict'
-
+/* eslint-disable no-undef */
 const Antl = use('Antl');
-const {rule} = use('Validator');
+const { rule } = use('Validator');
 
 class Receipt {
-  get validateAll(){
+  get validateAll() {
     return true;
   }
-  
-  get rules () {
+
+  get rules() {
     return {
       name: [rule('required')],
       description: [rule('required')],
-      value: [rule('required'), rule('number')],   
-      file_receipt: 'file|file_ext:png,jpg,jpeg,pdf|file_size:4mb',             
-      user_id: [rule('required'), rule('exists',['users','id'])],
-      activity_id: [rule('required'), rule('exists',['activities','id'])]           
-    }
+      value: [rule('required'), rule('number')],
+      file_receipt: 'file|file_ext:png,jpg,jpeg,pdf|file_size:4mb',
+      user_id: [rule('required'), rule('exists', ['users', 'id'])],
+      activity_id: [rule('required'), rule('exists', ['activities', 'id'])],
+    };
   }
 
-  get messages () {
+  get messages() {
     return Antl.list('validation');
   }
 }
 
-module.exports = Receipt
+module.exports = Receipt;

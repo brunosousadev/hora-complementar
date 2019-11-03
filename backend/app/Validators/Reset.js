@@ -1,23 +1,22 @@
-'use strict'
-
+/* eslint-disable no-undef */
 const Antl = use('Antl');
-const {rule} = use('Validator');
+const { rule } = use('Validator');
 
 class Reset {
-  get validateAll(){
+  get validateAll() {
     return true;
   }
-  
-  get rules () {
+
+  get rules() {
     return {
-      token: [rule('required')], 
-      password: [rule('required'), rule('confirmed')],   
-    }
+      token: [rule('required')],
+      password: [rule('required'), rule('confirmed')],
+    };
   }
 
-  get messages () {
+  get messages() {
     return Antl.list('validation');
   }
 }
 
-module.exports = Reset
+module.exports = Reset;

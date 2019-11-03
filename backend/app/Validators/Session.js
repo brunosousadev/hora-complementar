@@ -1,23 +1,22 @@
-'use strict'
-
+/* eslint-disable no-undef */
 const Antl = use('Antl');
-const {rule} = use('Validator');
+const { rule } = use('Validator');
 
 class Session {
-  get validateAll(){
+  get validateAll() {
     return true;
   }
-  
-  get rules () {
+
+  get rules() {
     return {
       email: [rule('email'), rule('required')],
-      password: [rule('required')]
-    }
+      password: [rule('required')],
+    };
   }
 
-  get messages () {
+  get messages() {
     return Antl.list('validation');
   }
 }
 
-module.exports = Session
+module.exports = Session;

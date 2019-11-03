@@ -1,15 +1,12 @@
-'use strict'
-
-const { ServiceProvider } = require('@adonisjs/fold')
+const { ServiceProvider } = require('@adonisjs/fold');
 
 class CustomValidationProvider extends ServiceProvider {
- 
-
-  async existsFn (data, field, message, args, get) {
+  async existsFn(data, field, message, args, get) {
+    // eslint-disable-next-line no-undef
     const Database = use('Database');
-        
-    const value = get(data, field)
-    
+
+    const value = get(data, field);
+
     if (!value) {
       /**
        * skip validation if value is not defined. `required` rule
@@ -18,9 +15,11 @@ class CustomValidationProvider extends ServiceProvider {
       return;
     }
 
-    const [table, column] = args
+    const [table, column] = args;
 
-    const row = await Database.table(table).where(column, value).first()
+    const row = await Database.table(table)
+      .where(column, value)
+      .first();
     if (!row) {
       throw message;
     }
@@ -34,10 +33,11 @@ class CustomValidationProvider extends ServiceProvider {
    *
    * @return {void}
    */
-  boot () {
-  const Validator = use('Validator')
-    Validator.extend('exists', this.existsFn.bind(this))
+  boot() {
+    // eslint-disable-next-line no-undef
+    const Validator = use('Validator');
+    Validator.extend('exists', this.existsFn.bind(this));
   }
 }
 
-module.exports = CustomValidationProvider
+module.exports = CustomValidationProvider;

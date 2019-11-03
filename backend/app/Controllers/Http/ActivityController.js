@@ -1,5 +1,5 @@
-
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model') } */
+// eslint-disable-next-line no-undef
 const Activity = use('App/Models/Activity');
 
 /**
@@ -11,35 +11,44 @@ class ActivityController {
    * GET activities
    */
   async index() {
-      const activities = await Activity.all();
-      return activities;
+    const activities = await Activity.all();
+    return activities;
   }
 
-
-  async store({ request}) {
-      const data = request.only(['name','description','voucher_type','value','category_id']);    
-      const activity = await Activity.create(data);
-
-      return activity;
+  async store({ request }) {
+    const data = request.only([
+      'name',
+      'description',
+      'voucher_type',
+      'value',
+      'category_id',
+    ]);
+    const activity = await Activity.create(data);
+    return activity;
   }
 
   /**
    * Display a single activity.
-   * GET activities/:id   
+   * GET activities/:id
    */
-  async show({ params}) {
+  async show({ params }) {
     const activity = await Activity.findOrFail(params.id);
 
     return activity;
   }
-
 
   /**
    * Update activity details.
    * PUT or PATCH activities/:id
    */
   async update({ params, request }) {
-    const data = request.only(['name','description','voucher_type','value','category_id']); 
+    const data = request.only([
+      'name',
+      'description',
+      'voucher_type',
+      'value',
+      'category_id',
+    ]);
 
     const activity = await Activity.findOrFail(params.id);
 
@@ -54,8 +63,8 @@ class ActivityController {
    * DELETE activities/:id
    *
    */
-  async destroy({ params}) {
-    const activity = await  Activity.findOrFail(params.id);
+  async destroy({ params }) {
+    const activity = await Activity.findOrFail(params.id);
 
     await activity.delete();
   }

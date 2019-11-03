@@ -1,25 +1,25 @@
-'use strict'
+/* eslint-disable no-undef */
 const Antl = use('Antl');
-const {rule} = use('Validator');
-
+const { rule } = use('Validator');
 
 class Activity {
-  get validateAll(){
+  get validateAll() {
     return true;
   }
 
-  get rules () {
+  get rules() {
     return {
-       name: [rule('required')],
-       description: [rule('string')],
-       voucher_type: [rule('string')],
-       value: [rule('required'),rule('number')],
-       category_id: [rule('required'), rule('exists',['categories','id'])]
-    }
+      name: [rule('required')],
+      description: [rule('string')],
+      voucher_type: [rule('string')],
+      value: [rule('required'), rule('number')],
+      category_id: [rule('required'), rule('exists', ['categories', 'id'])],
+    };
   }
-  get messages () {
+
+  get messages() {
     return Antl.list('validation');
   }
 }
 
-module.exports = Activity
+module.exports = Activity;
