@@ -8,6 +8,11 @@
     "start": "node server.js",
     "test": "node ace test"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "keywords": [
     "adonisjs",
     "adonis-app"
@@ -39,6 +44,7 @@
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
     "prettier": "^1.18.2",
     "sqlite3": "^4.1.0"
   },

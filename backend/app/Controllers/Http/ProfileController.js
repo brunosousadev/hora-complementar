@@ -41,6 +41,7 @@ class ProfileController {
 
     const {password} = request.only(['password']);
     if (password) {      
+      
       user.password = password;
     }    
     await user.save();    

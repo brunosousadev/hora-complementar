@@ -30,7 +30,7 @@ test('It should be able create user' ,async ({client, assert})=>{
   }).end();
     
   
-  response.assertStatus(201);   
+  response.assertStatus(201);     
   assert.exists(response.body.id);    
 });
 
@@ -58,7 +58,7 @@ test('It should be able to show single user', async ({client, assert})=>{
   });  
 
   const response = await client.get(`/users/${user.id}`).loginVia(user,'jwt').end();
-  response.assertStatus(200);
+    response.assertStatus(200);
     
     assert.equal(response.body.id,user.id);
 
